@@ -13,9 +13,9 @@ To start the project :
 
  SEARCH_TERMS.md # The whitelisted short collection of available search terms 
 
+A bookshelf app that allows user to add and change "shelves" according to user preference 
+has 3 main "shelves" : Currently Reading , Want to Read and Read
 
+each book is displayed in corresponding shelf and ha a control to change if needed 
 
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
-
+you can add more books by an add button that routes you to a search page where you can search by title or author 
