@@ -15,12 +15,11 @@ class BooksApp extends React.Component {
 
   
 
-  componentDidMount () {
-    BooksAPI.getAll().then((books) => {
+ async componentDidMount () {
+    const books = await BooksAPI.getAll()
       this.setState({ 
         books:books })
-    })
-     
+   
   }
   
 
@@ -33,18 +32,14 @@ class BooksApp extends React.Component {
          )).concat(book)
     }))
    
-    BooksAPI.getAll().then((books) => {
-      this.setState({ 
-        books:books })
-        
-    })
+   
   }
 
 
 
   render() {
     const {books} = this.state
-      console.log(books[0])
+     
       // <SearchBooks/>
     return (
       <div className="app">

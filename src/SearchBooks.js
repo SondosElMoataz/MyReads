@@ -11,7 +11,7 @@ export default class SearchBooks extends Component {
     
     updateQuery = (query)=>{
         this.setState(()=>({
-            query: query.trim()
+            query: query
         }))
     }
     Search = (query)=> {
@@ -27,6 +27,9 @@ export default class SearchBooks extends Component {
             }
           })
         } 
+        else {
+          this.setState({showingBooks:[]});
+        }
         // this.forceUpdate()
     }
     
@@ -36,17 +39,9 @@ export default class SearchBooks extends Component {
         const {query,showingBooks} = this.state
         const {books,onUpdateBookShelf} = this.props
 
-        console.log(books)
+        
         showingBooks.map((showBook)=>{
-          // books.forEach(book => {
-          //   if(showBook.id === book.id){
-          //     showBook.shelf = book.shelf
-          //   }
-          //   else{
-          //     showBook.shelf = 'none'
-          //   }
-            
-          // });
+         
           if(books.filter((c)=>c.id === showBook.id)[0]){
           showBook.shelf=books.filter((c)=>c.id === showBook.id)[0].shelf
           }

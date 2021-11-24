@@ -10,6 +10,13 @@ export default class BookShelfChanger extends Component {
        this.props.onUpdateBookShelf(this.props.book,e.target.value)
 
     }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.book.shelf !== this.props.book.shelf) {
+    //       this.setState({
+    //         selected: this.props.book.shelf
+    //       });
+    //     }
+    //   }
 
     render() {
        
